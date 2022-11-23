@@ -240,10 +240,12 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">torii.lib.fifo</span></code> module provides building blocks for first-in, first-out queues.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="torii.lib.fifo.FIFOInterface">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">torii.lib.fifo.</span></span><span class="sig-name descname"><span class="pre">FIFOInterface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fwft</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#torii.lib.fifo.FIFOInterface" title="Permalink to this definition"></a></dt>
-<dd><p>Data written to the input interface (<code class="docutils literal notranslate"><span class="pre">w_data</span></code>, <code class="docutils literal notranslate"><span class="pre">w_rdy</span></code>, <code class="docutils literal notranslate"><span class="pre">w_en</span></code>) is buffered and can be
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">torii.lib.fifo.</span></span><span class="sig-name descname"><span class="pre">FIFOInterface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fwft</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#torii.lib.fifo.FIFOInterface" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Data written to the input interface (<code class="docutils literal notranslate"><span class="pre">w_data</span></code>, <code class="docutils literal notranslate"><span class="pre">w_rdy</span></code>, <code class="docutils literal notranslate"><span class="pre">w_en</span></code>) is buffered and can be
 read at the output interface (<code class="docutils literal notranslate"><span class="pre">r_data</span></code>, <code class="docutils literal notranslate"><span class="pre">r_rdy</span></code>, <code class="docutils literal notranslate"><span class="pre">r_en</span></code>). The data entry written first
 to the input also appears first on the output.</p>
+</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -280,8 +282,10 @@ Does nothing if <code class="docutils literal notranslate"><span class="pre">r_r
 <dt class="sig sig-object py" id="torii.lib.fifo.SyncFIFO">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">torii.lib.fifo.</span></span><span class="sig-name descname"><span class="pre">SyncFIFO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fwft</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#torii.lib.fifo.SyncFIFO" title="Permalink to this definition"></a></dt>
 <dd><p>Synchronous first in, first out queue.</p>
-<p>Read and write interfaces are accessed from the same clock domain. If different clock domains
+<blockquote>
+<div><p>Read and write interfaces are accessed from the same clock domain. If different clock domains
 are needed, use <a class="reference internal" href="#torii.lib.fifo.AsyncFIFO" title="torii.lib.fifo.AsyncFIFO"><code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncFIFO</span></code></a>.</p>
+</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -315,10 +319,12 @@ Does nothing if <code class="docutils literal notranslate"><span class="pre">r_r
 <dt class="sig sig-object py" id="torii.lib.fifo.SyncFIFOBuffered">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">torii.lib.fifo.</span></span><span class="sig-name descname"><span class="pre">SyncFIFOBuffered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#torii.lib.fifo.SyncFIFOBuffered" title="Permalink to this definition"></a></dt>
 <dd><p>Buffered synchronous first in, first out queue.</p>
-<p>This queue’s interface is identical to <a class="reference internal" href="#torii.lib.fifo.SyncFIFO" title="torii.lib.fifo.SyncFIFO"><code class="xref py py-class docutils literal notranslate"><span class="pre">SyncFIFO</span></code></a> configured as <code class="docutils literal notranslate"><span class="pre">fwft=True</span></code>, but it
+<blockquote>
+<div><p>This queue’s interface is identical to <a class="reference internal" href="#torii.lib.fifo.SyncFIFO" title="torii.lib.fifo.SyncFIFO"><code class="xref py py-class docutils literal notranslate"><span class="pre">SyncFIFO</span></code></a> configured as <code class="docutils literal notranslate"><span class="pre">fwft=True</span></code>, but it
 does not use asynchronous memory reads, which are incompatible with FPGA block RAMs.</p>
 <p>In exchange, the latency between an entry being written to an empty queue and that entry
 becoming available on the output is increased by one cycle compared to <a class="reference internal" href="#torii.lib.fifo.SyncFIFO" title="torii.lib.fifo.SyncFIFO"><code class="xref py py-class docutils literal notranslate"><span class="pre">SyncFIFO</span></code></a>.</p>
+</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -350,21 +356,30 @@ Does nothing if <code class="docutils literal notranslate"><span class="pre">r_r
 <dt class="sig sig-object py" id="torii.lib.fifo.AsyncFIFO">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">torii.lib.fifo.</span></span><span class="sig-name descname"><span class="pre">AsyncFIFO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'read'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'write'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exact_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#torii.lib.fifo.AsyncFIFO" title="Permalink to this definition"></a></dt>
 <dd><p>Asynchronous first in, first out queue.</p>
-<p>Read and write interfaces are accessed from different clock domains, which can be set when
+<blockquote>
+<div><p>Read and write interfaces are accessed from different clock domains, which can be set when
 constructing the FIFO.</p>
 <p><a class="reference internal" href="#torii.lib.fifo.AsyncFIFO" title="torii.lib.fifo.AsyncFIFO"><code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncFIFO</span></code></a> can be reset from the write clock domain. When the write domain reset is
 asserted, the FIFO becomes empty. When the read domain is reset, data remains in the FIFO - the
 read domain logic should correctly handle this case.</p>
 <p><a class="reference internal" href="#torii.lib.fifo.AsyncFIFO" title="torii.lib.fifo.AsyncFIFO"><code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncFIFO</span></code></a> only supports power of 2 depths. Unless <code class="docutils literal notranslate"><span class="pre">exact_depth</span></code> is specified,
 the <code class="docutils literal notranslate"><span class="pre">depth</span></code> parameter is rounded up to the next power of 2.</p>
+</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – Bit width of data entries.</p></li>
 <li><p><strong>depth</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – Depth of the queue. If zero, the FIFO cannot be read from or written to.</p></li>
-<li><p><strong>r_domain</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Read clock domain.</p></li>
-<li><p><strong>w_domain</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Write clock domain.</p></li>
-<li><p><strong>fwft</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – Always set.</p></li>
+<li><p><strong>r_domain</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – <p>Read clock domain.
+w_domain : str</p>
+<blockquote>
+<div><p>Write clock domain.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>fwft<span class="classifier">bool</span></dt><dd><p>Always set.</p>
+</dd>
+</dl>
+</p></li>
 </ul>
 </dd>
 <dt class="field-even">Variables</dt>
@@ -391,7 +406,8 @@ the write-domain reset.</p></li>
 <dt class="sig sig-object py" id="torii.lib.fifo.AsyncFIFOBuffered">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">torii.lib.fifo.</span></span><span class="sig-name descname"><span class="pre">AsyncFIFOBuffered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'read'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'write'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exact_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#torii.lib.fifo.AsyncFIFOBuffered" title="Permalink to this definition"></a></dt>
 <dd><p>Buffered asynchronous first in, first out queue.</p>
-<p>Read and write interfaces are accessed from different clock domains, which can be set when
+<blockquote>
+<div><p>Read and write interfaces are accessed from different clock domains, which can be set when
 constructing the FIFO.</p>
 <p><a class="reference internal" href="#torii.lib.fifo.AsyncFIFOBuffered" title="torii.lib.fifo.AsyncFIFOBuffered"><code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncFIFOBuffered</span></code></a> only supports power of 2 plus one depths. Unless <code class="docutils literal notranslate"><span class="pre">exact_depth</span></code>
 is specified, the <code class="docutils literal notranslate"><span class="pre">depth</span></code> parameter is rounded up to the next power of 2 plus one.
@@ -400,14 +416,22 @@ is specified, the <code class="docutils literal notranslate"><span class="pre">d
 on the output, improving timing in case of block RAM that has large clock-to-output delay.</p>
 <p>In exchange, the latency between an entry being written to an empty queue and that entry
 becoming available on the output is increased by one cycle compared to <a class="reference internal" href="#torii.lib.fifo.AsyncFIFO" title="torii.lib.fifo.AsyncFIFO"><code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncFIFO</span></code></a>.</p>
+</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – Bit width of data entries.</p></li>
 <li><p><strong>depth</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – Depth of the queue. If zero, the FIFO cannot be read from or written to.</p></li>
-<li><p><strong>r_domain</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Read clock domain.</p></li>
-<li><p><strong>w_domain</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Write clock domain.</p></li>
-<li><p><strong>fwft</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – Always set.</p></li>
+<li><p><strong>r_domain</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – <p>Read clock domain.
+w_domain : str</p>
+<blockquote>
+<div><p>Write clock domain.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>fwft<span class="classifier">bool</span></dt><dd><p>Always set.</p>
+</dd>
+</dl>
+</p></li>
 </ul>
 </dd>
 <dt class="field-even">Variables</dt>
