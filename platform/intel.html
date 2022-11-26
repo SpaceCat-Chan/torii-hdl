@@ -160,32 +160,12 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../platform.html">Platform integration</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Intel</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#torii.vendor.intel.IntelPlatform"><code class="docutils literal notranslate"><span class="pre">IntelPlatform</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="lattice-ecp5.html">Lattice ECP5</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="lattice-ecp5.html#torii.vendor.lattice_ecp5.LatticeECP5Platform"><code class="docutils literal notranslate"><span class="pre">LatticeECP5Platform</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="lattice-ice40.html">Lattice iCE40</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="lattice-ice40.html#torii.vendor.lattice_ice40.LatticeICE40Platform"><code class="docutils literal notranslate"><span class="pre">LatticeICE40Platform</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="lattice-machxo-2-3l.html">Lattice MachXO2 and MachXO3L</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="lattice-machxo-2-3l.html#torii.vendor.lattice_machxo_2_3l.LatticeMachXO2Platform"><code class="docutils literal notranslate"><span class="pre">LatticeMachXO2Platform</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="lattice-machxo-2-3l.html#torii.vendor.lattice_machxo_2_3l.LatticeMachXO3LPlatform"><code class="docutils literal notranslate"><span class="pre">LatticeMachXO3LPlatform</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="lattice-machxo-2-3l.html#torii.vendor.lattice_machxo_2_3l.LatticeMachXO2Or3LPlatform"><code class="docutils literal notranslate"><span class="pre">LatticeMachXO2Or3LPlatform</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="quicklogic.html">Quicklogic</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="quicklogic.html#torii.vendor.quicklogic.QuicklogicPlatform"><code class="docutils literal notranslate"><span class="pre">QuicklogicPlatform</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="xilinx.html">Xilinx</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="xilinx.html#torii.vendor.xilinx.XilinxPlatform"><code class="docutils literal notranslate"><span class="pre">XilinxPlatform</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Intel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lattice-ecp5.html">Lattice ECP5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lattice-ice40.html">Lattice iCE40</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lattice-machxo-2-3l.html">Lattice MachXO2 and MachXO3L</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quicklogic.html">Quicklogic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xilinx.html">Xilinx</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../changes.html">Changelog</a><ul>
@@ -239,62 +219,6 @@
 <span id="intel"></span><h1>Intel<a class="headerlink" href="#module-torii.vendor.intel" title="Permalink to this heading"></a></h1>
 <p>The <a class="reference internal" href="#module-torii.vendor.intel" title="torii.vendor.intel"><code class="xref py py-mod docutils literal notranslate"><span class="pre">torii.vendor.intel</span></code></a> module provides a base platform to support Intel toolchains.</p>
 <p>The Quartus and Mistral toolchains are supported.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="torii.vendor.intel.IntelPlatform">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">torii.vendor.intel.</span></span><span class="sig-name descname"><span class="pre">IntelPlatform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toolchain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.11)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Quartus'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'Mistral'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Quartus'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#torii.vendor.intel.IntelPlatform" title="Permalink to this definition"></a></dt>
-<dd><p class="rubric">Quartus toolchain</p>
-<dl class="simple">
-<dt>Required tools:</dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">quartus_map</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">quartus_fit</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">quartus_asm</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">quartus_sta</span></code></p></li>
-</ul>
-</dd>
-</dl>
-<p>The environment is populated by running the script specified in the environment variable
-<code class="docutils literal notranslate"><span class="pre">AMARANTH_ENV_Quartus</span></code>, if present.</p>
-<dl class="simple">
-<dt>Available overrides:</dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">add_settings</span></code>: inserts commands at the end of the QSF file.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">add_constraints</span></code>: inserts commands at the end of the SDC file.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">nproc</span></code>: sets the number of cores used by all tools.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">quartus_map_opts</span></code>: adds extra options for <code class="docutils literal notranslate"><span class="pre">quartus_map</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">quartus_fit_opts</span></code>: adds extra options for <code class="docutils literal notranslate"><span class="pre">quartus_fit</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">quartus_asm_opts</span></code>: adds extra options for <code class="docutils literal notranslate"><span class="pre">quartus_asm</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">quartus_sta_opts</span></code>: adds extra options for <code class="docutils literal notranslate"><span class="pre">quartus_sta</span></code>.</p></li>
-</ul>
-</dd>
-<dt>Build products:</dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">*.rpt</span></code>: toolchain reports.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">{{name}}.sof</span></code>: bitstream as SRAM object file.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">{{name}}.rbf</span></code>: bitstream as raw binary file.</p></li>
-</ul>
-</dd>
-</dl>
-<p class="rubric">Mistral toolchain</p>
-<dl class="simple">
-<dt>Required tools:</dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">yosys</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">nextpnr-mistral</span></code></p></li>
-</ul>
-</dd>
-</dl>
-<p>The environment is populated by running the script specified in the environment variable
-<code class="docutils literal notranslate"><span class="pre">TORII_ENV_Mistral</span></code>, if present.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">verbose</span></code>: enables logging of informational messages to standard error.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">read_verilog_opts</span></code>: adds options for <code class="docutils literal notranslate"><span class="pre">read_verilog</span></code> Yosys command.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">synth_opts</span></code>: adds options for <code class="docutils literal notranslate"><span class="pre">synth_intel_alm</span></code> Yosys command.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">script_after_read</span></code>: inserts commands after <code class="docutils literal notranslate"><span class="pre">read_ilang</span></code> in Yosys script.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">script_after_synth</span></code>: inserts commands after <code class="docutils literal notranslate"><span class="pre">synth_intel_alm</span></code> in Yosys script.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">yosys_opts</span></code>: adds extra options for <code class="docutils literal notranslate"><span class="pre">yosys</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">nextpnr_opts</span></code>: adds extra options for <code class="docutils literal notranslate"><span class="pre">nextpnr-mistral</span></code>.</p></li>
-</ul>
-</div></blockquote>
-</dd></dl>
-
 </section>
 
 
