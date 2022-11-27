@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Xilinx &mdash; Torii-HDL unknown documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/styles.css" type="text/css" />
       <link rel="stylesheet" href="../_static/platformpicker.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/styles.css" type="text/css" />
     <link rel="canonical" href="https://shrine-maiden-heavy-industries.github.io/torii-hdl/platform/xilinx.html" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -21,6 +21,11 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/platformpicker.js"></script>
+        <script src="../_static/wavedrom.skin.js"></script>
+        <script src="../_static/wavedrom.min.js"></script>
+        <script src="../_static/js/mermaid.min.js"></script>
+        <script src="../_static/js/wavedrom.min.js"></script>
+        <script src="../_static/js/wavedrom.skin.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -221,6 +226,12 @@
 <p>The ISE, Vivado, and Symbiflow toolchains are supported.</p>
 </section>
 
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
 
            </div>
           </div>
