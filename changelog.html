@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Changelog &mdash; Torii-HDL 0.4.dev205 documentation</title>
+  <title>Changelog &mdash; Torii-HDL 0.4.dev206 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/styles.css" type="text/css" />
       <link rel="stylesheet" href="_static/platformpicker.css" type="text/css" />
@@ -339,7 +339,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#unreleased">Unreleased</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#added">Added</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#changed">Changed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#deprecated">Deprecated</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#removed">Removed</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fixed">Fixed</a></li>
 </ul>
@@ -378,22 +377,80 @@
 <p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a class="reference external" href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>,
 and this project adheres to <a class="reference external" href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<!--
+Unreleased template stuff
+
+## [Unreleased]
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+-->
 <section id="unreleased">
 <h2><a class="reference external" href="https://github.com/shrine-maiden-heavy-industries/torii-hdl/compare/amaranth-fork...main">Unreleased</a><a class="headerlink" href="#unreleased" title="Permalink to this heading"></a></h2>
 <section id="added">
 <h3>Added<a class="headerlink" href="#added" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Folded in <code class="docutils literal notranslate"><span class="pre">stdio</span></code> library components.</p></li>
+<li><p>Folded in <code class="docutils literal notranslate"><span class="pre">soc</span></code> library components.</p></li>
+<li><p>Folded in resources from <a class="reference external" href="https://github.com/shrine-maiden-heavy-industries/torii-boards">torii-boards</a> into the <code class="docutils literal notranslate"><span class="pre">torii.platform.resources</span></code> module.</p></li>
+<li><p>Added <a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a> configuration file.</p></li>
+<li><p>Added <a class="reference external" href="http://mypy-lang.org/">mypy</a> configuration file.</p></li>
+<li><p>Added <a class="reference external" href="https://github.com/shrine-maiden-heavy-industries/torii-hdl/blob/main/CODE_OF_CONDUCT.md">Code Of Conduct</a>.</p></li>
+<li><p>Added a <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code> for use with <a class="reference external" href="https://nox.thea.codes/en/stable/">nox</a>.</p></li>
+<li><p>Added an updated python unittest wrapper for use with Torii.</p></li>
+<li><p>Added string utility module.</p></li>
+<li><p>Added units utility module.</p></li>
+<li><p>Added dependency <code class="docutils literal notranslate"><span class="pre">rich</span></code>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">CANResource</span></code> to <code class="docutils literal notranslate"><span class="pre">torii.platform.resources.interface</span></code>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">ice40warmboot</span></code> to <code class="docutils literal notranslate"><span class="pre">torii.lib.vendor.lattice.ice40</span></code>.</p></li>
+<li><p>Added empty <code class="docutils literal notranslate"><span class="pre">torii.lib.vendor.xilinx</span></code> module.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">VGADACResource</span></code> to <code class="docutils literal notranslate"><span class="pre">torii.platform.resources.display</span></code>.</p></li>
+<li><p>Added preliminary support for the yosys+nextpnr-xilinx flow on the Xilinx platform.</p></li>
+<li><p>Added <a class="reference external" href="https://github.com/shrine-maiden-heavy-industries/torii-hdl/blob/main/CHANGELOG.md">Changelog</a> file.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">QSPIFlashResource</span></code> to <code class="docutils literal notranslate"><span class="pre">torii.platform.resources.memory</span></code>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">JTAGResource</span></code> to <code class="docutils literal notranslate"><span class="pre">torii.platform.resources.interface</span></code>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">EthernetResource</span></code> to <code class="docutils literal notranslate"><span class="pre">torii.platform.resources.interface</span></code>.</p></li>
+</ul>
 </section>
 <section id="changed">
 <h3>Changed<a class="headerlink" href="#changed" title="Permalink to this heading"></a></h3>
-</section>
-<section id="deprecated">
-<h3>Deprecated<a class="headerlink" href="#deprecated" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Refactored the <a class="reference external" href="https://shrine-maiden-heavy-industries.github.io/torii-hdl/">documentation</a>.</p></li>
+<li><p>Migrated string escape functions from the <code class="docutils literal notranslate"><span class="pre">TemplatedPlatform</span></code> into the new strings utility module.</p></li>
+<li><p>Moved <code class="docutils literal notranslate"><span class="pre">log2_int</span></code> and <code class="docutils literal notranslate"><span class="pre">bits_for</span></code> into the new units utility module.</p></li>
+<li><p>Moved vendor modules into <code class="docutils literal notranslate"><span class="pre">torii.platform.vendor</span></code>.</p></li>
+<li><p>Replaced deprecated <code class="docutils literal notranslate"><span class="pre">abstractproperties</span></code> with <code class="docutils literal notranslate"><span class="pre">property</span></code>/<code class="docutils literal notranslate"><span class="pre">abstractmethod</span></code> combo.</p></li>
+<li><p>Moved the <code class="docutils literal notranslate"><span class="pre">tracer</span></code> module into <code class="docutils literal notranslate"><span class="pre">torii.util</span></code>.</p></li>
+<li><p>Moved the <code class="docutils literal notranslate"><span class="pre">_unused</span></code> module into <code class="docutils literal notranslate"><span class="pre">torii.hdl</span></code>.</p></li>
+</ul>
 </section>
 <section id="removed">
 <h3>Removed<a class="headerlink" href="#removed" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Removed the <code class="docutils literal notranslate"><span class="pre">nMigen</span></code> compatibility layer.</p></li>
+<li><p>Removed the <code class="docutils literal notranslate"><span class="pre">migen</span></code> compatibility layer.</p></li>
+<li><p>Removed the compatibility tests.</p></li>
+<li><p>Removed the RPC server.</p></li>
+<li><p>Removed the old FHDL test case.</p></li>
+<li><p>Removed the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> case from <code class="docutils literal notranslate"><span class="pre">Shape</span></code>.</p></li>
+<li><p>Removed the warning from <code class="docutils literal notranslate"><span class="pre">rtlil.convert</span></code> and <code class="docutils literal notranslate"><span class="pre">verilog.convert</span></code> about implicit ports.</p></li>
+<li><p>Removed the <code class="docutils literal notranslate"><span class="pre">_ignore_deprecated</span></code> decorator.</p></li>
+<li><p>Removed the <code class="docutils literal notranslate"><span class="pre">C</span></code> alias for <code class="docutils literal notranslate"><span class="pre">Const</span></code>.</p></li>
+</ul>
 </section>
 <section id="fixed">
 <h3>Fixed<a class="headerlink" href="#fixed" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Fixed the package name.</p></li>
+<li><p>Fixed the package authors.</p></li>
+<li><p>Fixed the package trove classifiers.</p></li>
+<li><p>Fixed all flake8 warnings on the entire codebase.</p></li>
+<li><p>Fixed indentation.</p></li>
+<li><p>Fixed docstring formatting.</p></li>
+</ul>
 </section>
 </section>
 <section id="id1">
