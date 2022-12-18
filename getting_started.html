@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Getting Started &mdash; Torii-HDL 0.4.2.dev6 documentation</title>
+  <title>Getting Started &mdash; Torii-HDL 0.4.2.dev10 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/styles.css" type="text/css" />
       <link rel="stylesheet" href="_static/platformpicker.css" type="text/css" />
@@ -412,7 +412,7 @@
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span>
 <span class="linenos"> 4</span><span class="k">class</span> <span class="nc">UpCounter</span><span class="p">(</span><span class="n">Elaboratable</span><span class="p">):</span>
-<span class="linenos"> 5</span>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 5</span>    <span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 6</span><span class="sd">    A 16-bit up counter with a fixed limit.</span>
 <span class="linenos"> 7</span>
 <span class="linenos"> 8</span><span class="sd">    Parameters</span>
@@ -427,8 +427,8 @@
 <span class="linenos">17</span><span class="sd">        its value otherwise.</span>
 <span class="linenos">18</span><span class="sd">    ovf : Signal, out</span>
 <span class="linenos">19</span><span class="sd">        ``ovf`` is asserted when the counter reaches its limit.</span>
-<span class="linenos">20</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos">21</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
+<span class="linenos">20</span><span class="sd">    &#39;&#39;&#39;</span>
+<span class="linenos">21</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
 <span class="linenos">22</span>        <span class="bp">self</span><span class="o">.</span><span class="n">limit</span> <span class="o">=</span> <span class="n">limit</span>
 <span class="linenos">23</span>
 <span class="linenos">24</span>        <span class="c1"># Ports</span>
@@ -438,7 +438,7 @@
 <span class="linenos">28</span>        <span class="c1"># State</span>
 <span class="linenos">29</span>        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="n">Signal</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
 <span class="linenos">30</span>
-<span class="linenos">31</span>    <span class="k">def</span> <span class="nf">elaborate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">platform</span><span class="p">):</span>
+<span class="linenos">31</span>    <span class="k">def</span> <span class="nf">elaborate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">platform</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Module</span><span class="p">:</span>
 <span class="linenos">32</span>        <span class="n">m</span> <span class="o">=</span> <span class="n">Module</span><span class="p">()</span>
 <span class="linenos">33</span>
 <span class="linenos">34</span>        <span class="n">m</span><span class="o">.</span><span class="n">d</span><span class="o">.</span><span class="n">comb</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ovf</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">limit</span><span class="p">)</span>
