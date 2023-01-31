@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
-from ..vendor.openlane import OpenLANEPlatform
+from .openlane import OpenLANEPlatform
 
 __all__ = (
 	'SKY130_PLATFORMS',
@@ -49,7 +49,8 @@ class Sky130APlatform(OpenLANEPlatform):
 	 * :py:class:`Sky130ALowSpeedPlatform`
 	 * :py:class:`Sky130AHighDensityLowLeakagePlatform`
 
-	'''
+	''' # noqa: E101
+
 	pdk = 'sky130A'
 
 class Sky130AHighDensityPlatform(Sky130APlatform):
@@ -78,6 +79,7 @@ class Sky130AHighSpeedPlatform(Sky130APlatform):
 	the cell library to ``sky130_fd_sc_hs`` for the high speed standard cells.
 
 	'''
+
 	cell_library = 'sky130_fd_sc_hs'
 
 class Sky130AMediumSpeedPlatform(Sky130APlatform):
@@ -92,6 +94,7 @@ class Sky130AMediumSpeedPlatform(Sky130APlatform):
 	the cell library to ``sky130_fd_sc_ms`` for the medium speed standard cells.
 
 	'''
+
 	cell_library = 'sky130_fd_sc_ms'
 
 class Sky130ALowSpeedPlatform(Sky130APlatform):
@@ -106,6 +109,7 @@ class Sky130ALowSpeedPlatform(Sky130APlatform):
 	the cell library to ``sky130_fd_sc_ls`` for the low speed standard cells.
 
 	'''
+
 	cell_library = 'sky130_fd_sc_ls'
 
 class Sky130AHighDensityLowLeakagePlatform(Sky130APlatform):
@@ -120,11 +124,11 @@ class Sky130AHighDensityLowLeakagePlatform(Sky130APlatform):
 	the cell library to ``sky130_fd_sc_hdll`` for the high-density low-leakage standard cells.
 
 	'''
+
 	cell_library = 'sky130_fd_sc_hdll'
 
 class Sky130BPlatform(OpenLANEPlatform):
 	'''OpenLANE - Sky130B PDK Platform
-
 
 	This is the base platform the specifies the the sky130A PDK.
 
@@ -137,7 +141,8 @@ class Sky130BPlatform(OpenLANEPlatform):
 	 * :py:class:`Sky130BLowSpeedPlatform`
 	 * :py:class:`Sky130BHighDensityLowLeakagePlatform`
 
-	'''
+	''' # noqa: E101
+
 	pdk = 'sky130B'
 
 class Sky130BHighDensityPlatform(Sky130BPlatform):
@@ -147,6 +152,7 @@ class Sky130BHighDensityPlatform(Sky130BPlatform):
 	the cell library to ``sky130_fd_sc_hd`` for the high-density standard cells.
 
 	'''
+
 	cell_library = 'sky130_fd_sc_hd'
 
 class Sky130BHighSpeedPlatform(Sky130BPlatform):
@@ -157,6 +163,7 @@ class Sky130BHighSpeedPlatform(Sky130BPlatform):
 	the cell library to ``sky130_fd_sc_hs`` for the high speed standard cells.
 
 	'''
+
 	cell_library = 'sky130_fd_sc_hs'
 
 class Sky130BMediumSpeedPlatform(Sky130BPlatform):
@@ -167,6 +174,7 @@ class Sky130BMediumSpeedPlatform(Sky130BPlatform):
 	the cell library to ``sky130_fd_sc_ms`` for the medium speed standard cells.
 
 	'''
+
 	cell_library = 'sky130_fd_sc_ms'
 
 class Sky130BLowSpeedPlatform(Sky130BPlatform):
@@ -177,6 +185,7 @@ class Sky130BLowSpeedPlatform(Sky130BPlatform):
 	the cell library to ``sky130_fd_sc_ls`` for the low speed standard cells.
 
 	'''
+
 	cell_library = 'sky130_fd_sc_ls'
 
 class Sky130BHighDensityLowLeakagePlatform(Sky130BPlatform):
@@ -186,6 +195,7 @@ class Sky130BHighDensityLowLeakagePlatform(Sky130BPlatform):
 	the cell library to ``sky130_fd_sc_hdll`` for the high-density low-leakage standard cells.
 
 	'''
+
 	cell_library = 'sky130_fd_sc_hdll'
 
 SKY130A_PLATFORMS = {

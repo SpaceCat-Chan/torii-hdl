@@ -83,8 +83,8 @@ class OpenLANEPlatform(TemplatedPlatform):
 			run
 			-it
 			--rm
-            -v {{get_override("OpenLANE")|default(platform.openlane_root)}}:/openLANE_flow
-            -v {{get_override("PDKPath")|default(platform.pdk_path)}}:/PDK
+			-v {{get_override("OpenLANE")|default(platform.openlane_root)}}:/openLANE_flow
+			-v {{get_override("PDKPath")|default(platform.pdk_path)}}:/PDK
 			-v {{platform.build_dir}}:/design_{{name}}
 			-e PDK_ROOT=/PDK
 			-u $UID:$GID
