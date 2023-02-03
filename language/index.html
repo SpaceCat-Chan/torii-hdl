@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Language Guide &mdash; Torii-HDL 0.4.4.dev10 documentation</title>
+  <title>Language Guide &mdash; Torii-HDL 0.4.4.dev15 documentation</title>
   
 
   
@@ -648,6 +648,10 @@
 <span class="go">(const 3&#39;d5)</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a value subclasses :class:<code class="docutils literal notranslate"><span class="pre">enum.IntEnum</span></code> or its class otherwise inherits from both :class:<code class="docutils literal notranslate"><span class="pre">int</span></code> and :class:<code class="docutils literal notranslate"><span class="pre">Enum</span></code>, it is treated as an enumeration.</p>
+</div>
 </section>
 <section id="values-from-enumeration-members">
 <h3>Values from enumeration members<a class="headerlink" href="#values-from-enumeration-members" title="Permalink to this heading">¶</a></h3>
@@ -655,6 +659,10 @@
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Value</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">Direction</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span>
 <span class="go">(const 2&#39;d1)</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a value subclasses :class:<code class="docutils literal notranslate"><span class="pre">enum.IntEnum</span></code> or its class otherwise inherits from both :class:<code class="docutils literal notranslate"><span class="pre">int</span></code> and :class:<code class="docutils literal notranslate"><span class="pre">Enum</span></code>, it is treated as an enumeration.</p>
 </div>
 </section>
 </section>
