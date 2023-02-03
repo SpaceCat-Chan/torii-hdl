@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Clock Domain Crossing &mdash; Torii-HDL 0.4.4.dev3 documentation</title>
+  <title>Clock Domain Crossing &mdash; Torii-HDL 0.4.4.dev10 documentation</title>
   
 
   
@@ -498,14 +498,14 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="torii.lib.cdc.FFSynchronizer">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">torii.lib.cdc.</span></span><span class="sig-name descname"><span class="pre">FFSynchronizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_loc_at</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#torii.lib.cdc.FFSynchronizer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Resynchronise a signal to a different clock domain.</p>
+<dd><p>Resynchronize a signal to a different clock domain.</p>
 <p>Consists of a chain of flip-flops. Eliminates metastabilities at the output, but provides
 no other guarantee as to the safe domain-crossing of a signal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>i</strong> (<a class="reference internal" href="../api/hdl/ast.html#torii.hdl.ast.Signal" title="torii.hdl.ast.Signal"><em>Signal</em></a><em>(</em><em>n</em><em>)</em><em>, </em><em>in</em>) – Signal to be resynchronised.</p></li>
-<li><p><strong>o</strong> (<a class="reference internal" href="../api/hdl/ast.html#torii.hdl.ast.Signal" title="torii.hdl.ast.Signal"><em>Signal</em></a><em>(</em><em>n</em><em>)</em><em>, </em><em>out</em>) – Signal connected to synchroniser output.</p></li>
+<li><p><strong>i</strong> (<a class="reference internal" href="../api/hdl/ast.html#torii.hdl.ast.Signal" title="torii.hdl.ast.Signal"><em>Signal</em></a><em>(</em><em>n</em><em>)</em><em>, </em><em>in</em>) – Signal to be resynchronized.</p></li>
+<li><p><strong>o</strong> (<a class="reference internal" href="../api/hdl/ast.html#torii.hdl.ast.Signal" title="torii.hdl.ast.Signal"><em>Signal</em></a><em>(</em><em>n</em><em>)</em><em>, </em><em>out</em>) – Signal connected to synchronizer output.</p></li>
 <li><p><strong>o_domain</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Name of output clock domain.</p></li>
 <li><p><strong>reset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – Reset value of the flip-flops. On FPGAs, even if <code class="docutils literal notranslate"><span class="pre">reset_less</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>,
 the <a class="reference internal" href="#torii.lib.cdc.FFSynchronizer" title="torii.lib.cdc.FFSynchronizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFSynchronizer</span></code></a> is still set to this value during initialization.</p></li>
@@ -530,7 +530,7 @@ after reset, consider setting <code class="docutils literal notranslate"><span c
 <li><p>Your design features warm (non-power-on) resets of <code class="docutils literal notranslate"><span class="pre">o_domain</span></code>, so the one-time
 initialization at power on is insufficient;</p></li>
 <li><p>Your design features a sequenced reset, and the <a class="reference internal" href="#torii.lib.cdc.FFSynchronizer" title="torii.lib.cdc.FFSynchronizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFSynchronizer</span></code></a> must maintain
-its reset value until <code class="docutils literal notranslate"><span class="pre">o_domain</span></code> reset specifically is deasserted.</p></li>
+its reset value until <code class="docutils literal notranslate"><span class="pre">o_domain</span></code> reset specifically is de-asserted.</p></li>
 </ul>
 <p><a class="reference internal" href="#torii.lib.cdc.FFSynchronizer" title="torii.lib.cdc.FFSynchronizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFSynchronizer</span></code></a> is reset by the <code class="docutils literal notranslate"><span class="pre">o_domain</span></code> reset only.</p>
 </div>
@@ -542,9 +542,9 @@ its reset value until <code class="docutils literal notranslate"><span class="pr
 <dl class="py class">
 <dt class="sig sig-object py" id="torii.lib.cdc.AsyncFFSynchronizer">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">torii.lib.cdc.</span></span><span class="sig-name descname"><span class="pre">AsyncFFSynchronizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_loc_at</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#torii.lib.cdc.AsyncFFSynchronizer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Synchronize deassertion of an asynchronous signal.</p>
-<p>The signal driven by the <a class="reference internal" href="#torii.lib.cdc.AsyncFFSynchronizer" title="torii.lib.cdc.AsyncFFSynchronizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncFFSynchronizer</span></code></a> is asserted asynchronously and deasserted
-synchronously, eliminating metastability during deassertion.</p>
+<dd><p>Synchronize de-assertion of an asynchronous signal.</p>
+<p>The signal driven by the <a class="reference internal" href="#torii.lib.cdc.AsyncFFSynchronizer" title="torii.lib.cdc.AsyncFFSynchronizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncFFSynchronizer</span></code></a> is asserted asynchronously and de-asserted
+synchronously, eliminating metastability during de-assertion.</p>
 <p>This synchronizer is primarily useful for resets and reset-like signals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -553,7 +553,7 @@ synchronously, eliminating metastability during deassertion.</p>
 <li><p><strong>o</strong> (<a class="reference internal" href="../api/hdl/ast.html#torii.hdl.ast.Signal" title="torii.hdl.ast.Signal"><em>Signal</em></a><em>(</em><em>1</em><em>)</em><em>, </em><em>out</em>) – Synchronously released output signal.</p></li>
 <li><p><strong>o_domain</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Name of clock domain to synchronize to.</p></li>
 <li><p><strong>stages</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>&gt;=2</em>) – Number of synchronization stages between input and output. The lowest safe number is 2,
-with higher numbers reducing MTBF further, at the cost of increased deassertion latency.</p></li>
+with higher numbers reducing MTBF further, at the cost of increased de-assertion latency.</p></li>
 <li><p><strong>async_edge</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The edge of the input signal which causes the output to be set. Must be one of “pos” or “neg”.</p></li>
 <li><p><strong>max_input_delay</strong> (<em>None</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – Maximum delay from the input signal’s clock to the first synchronization stage, in seconds.
 If specified and the platform does not support it, elaboration will fail.</p></li>
@@ -568,11 +568,11 @@ If specified and the platform does not support it, elaboration will fail.</p></l
 <dl class="py class">
 <dt class="sig sig-object py" id="torii.lib.cdc.ResetSynchronizer">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">torii.lib.cdc.</span></span><span class="sig-name descname"><span class="pre">ResetSynchronizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_loc_at</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#torii.lib.cdc.ResetSynchronizer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Synchronize deassertion of a clock domain reset.</p>
+<dd><p>Synchronize de-assertion of a clock domain reset.</p>
 <p>The reset of the clock domain driven by the <a class="reference internal" href="#torii.lib.cdc.ResetSynchronizer" title="torii.lib.cdc.ResetSynchronizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResetSynchronizer</span></code></a> is asserted
-asynchronously and deasserted synchronously, eliminating metastability during deassertion.</p>
+asynchronously and de-asserted synchronously, eliminating metastability during de-assertion.</p>
 <p>The driven clock domain could use a reset that is asserted either synchronously or
-asynchronously; a reset is always deasserted synchronously. A domain with an asynchronously
+asynchronously; a reset is always de-asserted synchronously. A domain with an asynchronously
 asserted reset is useful if the clock of the domain may be gated, yet the domain still
 needs to be reset promptly; otherwise, synchronously asserted reset (the default) should
 be used.</p>
@@ -582,7 +582,7 @@ be used.</p>
 <li><p><strong>arst</strong> (<a class="reference internal" href="../api/hdl/ast.html#torii.hdl.ast.Signal" title="torii.hdl.ast.Signal"><em>Signal</em></a><em>(</em><em>1</em><em>)</em><em>, </em><em>in</em>) – Asynchronous reset signal, to be synchronized.</p></li>
 <li><p><strong>domain</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Name of clock domain to reset.</p></li>
 <li><p><strong>stages</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>&gt;=2</em>) – Number of synchronization stages between input and output. The lowest safe number is 2,
-with higher numbers reducing MTBF further, at the cost of increased deassertion latency.</p></li>
+with higher numbers reducing MTBF further, at the cost of increased de-assertion latency.</p></li>
 <li><p><strong>max_input_delay</strong> (<em>None</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – Maximum delay from the input signal’s clock to the first synchronization stage, in seconds.
 If specified and the platform does not support it, elaboration will fail.</p></li>
 </ul>
@@ -607,7 +607,7 @@ no constraint on the ratio of input and output clock frequency.</p>
 <li><p><strong>i_domain</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Name of input clock domain.</p></li>
 <li><p><strong>o_domain</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Name of output clock domain.</p></li>
 <li><p><strong>stages</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>&gt;=2</em>) – Number of synchronization stages between input and output. The lowest safe number is 2,
-with higher numbers reducing MTBF further, at the cost of increased deassertion latency.</p></li>
+with higher numbers reducing MTBF further, at the cost of increased de-assertion latency.</p></li>
 </ul>
 </dd>
 </dl>

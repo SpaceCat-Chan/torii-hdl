@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Abstract Syntax Tree &mdash; Torii-HDL 0.4.4.dev3 documentation</title>
+  <title>Abstract Syntax Tree &mdash; Torii-HDL 0.4.4.dev10 documentation</title>
   
 
   
@@ -656,7 +656,7 @@ the bit lengths of the arguments:</p>
 <dd class="field-odd"><p><strong>*args</strong> (<em>Values</em><em> or </em><em>iterables</em><em> of </em><em>Values</em><em>, </em><em>inout</em>) – <code class="docutils literal notranslate"><span class="pre">Value</span></code> s to be concatenated.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Resulting <code class="docutils literal notranslate"><span class="pre">Value</span></code> obtained by concatentation.</p>
+<dd class="field-even"><p>Resulting <code class="docutils literal notranslate"><span class="pre">Value</span></code> obtained by concatenation.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Value, inout</p>
@@ -936,7 +936,7 @@ independently of the clock domain, even before the clock domain is created.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">torii.hdl.ast.</span></span><span class="sig-name descname"><span class="pre">UserValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_loc_at</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#torii.hdl.ast.UserValue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Value with custom lowering.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">UserValue</span></code> is a value whose precise representation does not have to be immediately known,
-which is useful in certain metaprogramming scenarios. Instead of providing fixed semantics
+which is useful in certain meta-programming scenarios. Instead of providing fixed semantics
 upfront, it is kept abstract for as long as possible, only being lowered to a concrete Torii
 value when required.</p>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">lower</span></code> method will only be called once; this is necessary to ensure that

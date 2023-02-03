@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Introduction &mdash; Torii-HDL 0.4.4.dev3 documentation</title>
+  <title>Introduction &mdash; Torii-HDL 0.4.4.dev10 documentation</title>
   
 
   
@@ -538,7 +538,7 @@
 </section>
 <section id="development-board-definitions">
 <h2>Development board definitions<a class="headerlink" href="#development-board-definitions" title="Permalink to this heading">¶</a></h2>
-<p>Getting started with a new FPGA development board often requires going through a laborous and error-prone process of deriving toolchain configuration and constraint files from the supplied documentation. The Torii project includes a community-maintained repository of definitions for many open-source and commercial FPGA development boards.</p>
+<p>Getting started with a new FPGA development board often requires going through a laborious and error-prone process of deriving toolchain configuration and constraint files from the supplied documentation. The Torii project includes a community-maintained repository of definitions for many open-source and commercial FPGA development boards.</p>
 <p>These board definitions contain everything that is necessary to start using the board: FPGA family and model, clocks and resets, descriptions of on-board peripherals (including pin direction and attributes such as I/O standard), connector pinouts, and for boards with a built-in debug probe, the steps required to program the board. It takes a single Python invocation to generate, build, and download a test design that shows whether the board, toolchain, and programmer are working correctly.</p>
 <p>Torii establishes a pin naming convention for many common peripherals (such as 7-segment displays, SPI flashes and SDRAM memories), enabling the reuse of unmodified interface code with many different boards. Further, the polarity of all control signals is unified to be active high, eliminating accidental polarity inversions and making simulation traces easier to follow; active low signals are inverted during I/O buffer instantiation.</p>
 </section>
