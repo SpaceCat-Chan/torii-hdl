@@ -5,6 +5,8 @@ from typing        import Dict, Union, Optional, List, Tuple
 from pathlib       import Path
 
 from ...build.plat import TemplatedPlatform
+from ...build.run  import BuildPlan
+from ...hdl.ir     import Fragment
 
 __all__ = (
 	'OpenLANEPlatform',
@@ -155,3 +157,12 @@ class OpenLANEPlatform(TemplatedPlatform):
 	def build(self, *args, **kwargs):
 		self._build_dir = Path(kwargs.get('build_dir', 'build')).resolve()
 		return super().build(*args, **kwargs)
+
+	def toolchain_prepare(self, fragment: Fragment, name: str, **kwargs) -> BuildPlan:
+
+		# Propagate module ports for io placement
+		a_ports = kwargs.get('ports', None)
+		if a_ports is not None:
+			fragment._propagate_ports(ports = a_ports, all_undef_as_ports = False)
+
+		return super().toolchain_prepare(fragment, name, **kwargs)
