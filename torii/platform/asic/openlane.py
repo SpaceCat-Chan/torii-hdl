@@ -121,8 +121,6 @@ class OpenLANEPlatform(TemplatedPlatform):
 
 	_openlane_command_templates = (
 		r'''
-		TORII_UID=$(id -u)
-		TORII_GID=$(id -g)
 		{{invoke_tool("docker")}}
 			run
 			-it
@@ -131,7 +129,7 @@ class OpenLANEPlatform(TemplatedPlatform):
 			-v {{get_override("PDK_ROOT")|default(platform.pdk_root)}}:/PDK
 			-v {{platform._build_dir}}:/design_{{name}}
 			-e PDK_ROOT=/PDK
-			-u $TORII_UID:$TORII_GID
+			-u $(id -u):$(id -g)
 			efabless/openlane:{{get_override("openlane_version")|default("latest")}}
 			sh -c "./flow.tcl -design /design_{{name}} -config_file /design_{{name}}/config.tcl"
 		''',
