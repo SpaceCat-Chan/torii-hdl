@@ -25,11 +25,8 @@ class ALU(Elaboratable):
 
 class ExampleFlow(Sky130BHighDensityPlatform):
 	flow_settings = {
-		'PL_TARGET_DENSITY': 0.50,
-		'FP_PDN_HORIZONTAL_HALO': 6,
-		'FP_PDN_VERTICAL_HALO': 6,
-		'FP_CORE_UTIL': 50,
-		'DESIGN_IS_CORE': 0,
+		'FP_CORE_UTIL': 30,
+		'DESIGN_IS_CORE': 1,
 	}
 	connectors = ()
 	resources  = ()
