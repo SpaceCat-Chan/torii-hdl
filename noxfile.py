@@ -44,6 +44,7 @@ def test(session: Session) -> None:
 	out_dir.mkdir(parents = True, exist_ok = True)
 	coverage = '--coverage' in session.posargs
 	codecov  = '--codecov' in session.posargs
+	asic     = '--asic' in session.posargs
 
 	unitest_args = ('-m', 'unittest', 'discover', '-s', str(ROOT_DIR))
 
@@ -62,9 +63,18 @@ def test(session: Session) -> None:
 		session.install('codecov')
 
 	session.chdir(str(out_dir))
-	session.run(
-		'python', *coverage_args, *unitest_args
-	)
+	if asic:
+		ASIC_EXAMPLES = ROOT_DIR / 'examples' / 'asic'
+
+		session.log('Running ASIC tests')
+		session.run(
+			'python', *coverage_args, f'{ASIC_EXAMPLES / "alu.py"}'
+		)
+	else:
+		session.log('Running standard tests')
+		session.run(
+			'python', *coverage_args, *unitest_args
+		)
 	if codecov and coverage:
 		session.run('codecov')
 
