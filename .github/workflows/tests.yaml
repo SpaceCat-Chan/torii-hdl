@@ -88,7 +88,7 @@ jobs:
         with:
           repository: 'The-OpenROAD-Project/OpenLane'
           ref: '2023.01.31'
-          path: 'openlane'
+          path: '../../../openlane'
           fetch-depth: 1
 
       - name: Setup PDK / OpenLane
