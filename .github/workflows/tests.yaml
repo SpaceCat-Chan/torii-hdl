@@ -48,12 +48,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       OPENLANE_TAG: 2023.01.31
-      OPENLANE_IMAGE_NAME: efabless/openlane:$(OPENLANE_TAG)
+      OPENLANE_IMAGE_NAME: efabless/openlane:${OPENLANE_TAG}
       OPENLANE_ROOT: /home/runner/openlane
       PDK_ROOT: /home/runner/pdk
       PDK_TAG: e884c4dcbf65101721529572ab6584f254e4f551
-      TORII_OPENLANE_ROOT: $(OPENLANE_ROOT)
-      TORII_PDK_ROOT: $(PDK_ROOT)
+      TORII_OPENLANE_ROOT: ${OPENLANE_ROOT}
+      TORII_PDK_ROOT: ${PDK_ROOT}
     steps:
       - name: Setup Python
         uses: actions/setup-python@v4
