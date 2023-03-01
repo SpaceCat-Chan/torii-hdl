@@ -51,6 +51,7 @@ jobs:
       OPENLANE_IMAGE_NAME: efabless/openlane:$(OPENLANE_TAG)
       OPENLANE_ROOT: /home/runner/openlane
       PDK_ROOT: /home/runner/pdk
+      PDK_TAG: e884c4dcbf65101721529572ab6584f254e4f551
     steps:
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -83,7 +84,7 @@ jobs:
       - name: Setup PDK
         shell: bash
         run: |
-          volare enable --pdk sky130 e884c4dcbf65101721529572ab6584f254e4f551
+          volare enable --pdk sky130 $PDK_TAG
 
       - name: Run ASIC Tests
         shell: bash
