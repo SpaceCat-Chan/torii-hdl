@@ -49,8 +49,8 @@ jobs:
     env:
       OPENLANE_TAG: 2023.01.31
       OPENLANE_IMAGE_NAME: efabless/openlane:${OPENLANE_TAG}
-      OPENLANE_ROOT: /home/runner/openlane
-      PDK_ROOT: /home/runner/pdk
+      OPENLANE_ROOT: /home/runner/work/torii-hdl/torii-hdl/openlane
+      PDK_ROOT: /home/runner/work/torii-hdl/torii-hdl/pdk
       PDK_TAG: e884c4dcbf65101721529572ab6584f254e4f551
       TORII_OPENLANE_ROOT: ${OPENLANE_ROOT}
       TORII_PDK_ROOT: ${PDK_ROOT}
@@ -88,7 +88,7 @@ jobs:
         with:
           repository: 'The-OpenROAD-Project/OpenLane'
           ref: '2023.01.31'
-          path: '../../../openlane'
+          path: 'openlane'
           fetch-depth: 1
 
       - name: Setup PDK / OpenLane
