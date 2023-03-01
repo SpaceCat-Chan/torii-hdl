@@ -91,10 +91,13 @@ jobs:
           path: 'openlane'
           fetch-depth: 1
 
-      - name: Setup PDK
+      - name: Setup PDK / OpenLane
         shell: bash
         run: |
-          volare enable --pdk sky130 $PDK_TAG
+          volare enable --pdk sky130 ${PDK_TAG}
+          pushd ${OPENLANE_ROOT}
+          make get-openlane
+          popd
 
       - name: Run ASIC Tests
         shell: bash
