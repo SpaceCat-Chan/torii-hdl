@@ -122,14 +122,21 @@ class OpenLANEPlatform(TemplatedPlatform):
 		r'''
 		{{invoke_tool("docker")}}
 			run
+			{% if get_override_flag("openlane_interactive") %}
+			-it
+			{% endif %}
+			{% if not get_override_flag("docker_networked") %}
+			--network none
+			{% endif %}
 			--rm
+			--name "torii-openlane-{{name}}"
 			-v {{get_override("OPENLANE_ROOT")|default(platform.openlane_root)}}:/openLANE_flow
 			-v {{get_override("PDK_ROOT")|default(platform.pdk_root)}}:/PDK
 			-v {{platform._build_dir}}:/design_{{name}}
 			-e PDK_ROOT=/PDK
 			-u $(id -u):$(id -g)
 			efabless/openlane:{{get_override("OPENLANE_TAG")|default("latest")}}
-			sh -c "./flow.tcl -design /design_{{name}} -config_file /design_{{name}}/config.tcl"
+			sh -c "./flow.tcl {{verbose("-verbose 2")}} -design /design_{{name}} -config_file /design_{{name}}/config.tcl"
 		''',
 	)
 
