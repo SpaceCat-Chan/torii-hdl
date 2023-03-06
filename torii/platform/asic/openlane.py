@@ -1,7 +1,7 @@
-# SPDX-License-Identifier: BSD-3-Clause
+# SPDX-License-Identifier: BSD-2-Clause
 
 from abc           import abstractmethod
-from typing        import Dict, Union, Optional, List, Tuple
+from typing        import Union, Optional
 from pathlib       import Path
 
 from ...build.plat import TemplatedPlatform
@@ -53,7 +53,7 @@ class OpenLANEPlatform(TemplatedPlatform):
 
 	@property
 	@abstractmethod
-	def flow_settings(self) -> Dict[str, Union[str, int, float]]:
+	def flow_settings(self) -> dict[str, Union[str, int, float]]:
 		raise NotImplementedError('Platform must implement this property')
 
 	_openlane_required_tools = (
@@ -146,15 +146,15 @@ class OpenLANEPlatform(TemplatedPlatform):
 		super().__init__()
 
 	@property
-	def required_tools(self) -> Tuple[str]:
+	def required_tools(self) -> tuple[str]:
 		return self._openlane_required_tools
 
 	@property
-	def file_templates(self) -> Dict[str, str]:
+	def file_templates(self) -> dict[str, str]:
 		return self._openlane_file_templates
 
 	@property
-	def command_templates(self) -> List[str]:
+	def command_templates(self) -> list[str]:
 		return self._openlane_command_templates
 
 	def build(self, *args, **kwargs):
